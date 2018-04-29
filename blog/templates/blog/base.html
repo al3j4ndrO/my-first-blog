@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+	<meta charset="UTF-8">
+	<title>Andrea Katherine blog</title>
+</head>
+
+<body>
+
+	<!-- Script: opcion para diferenciar la pagina en la que estoy -->
+	<script type="text/javascript">
+		window.onload = function Selected() 
+		{
+			document.getElementById("op0").style.background='#cd2e44';
+			document.getElementById("op0").style.color = "#fff";
+		}
+	</script>
+
+	<header>
+		<section id="menu">
+			<ul>
+				<a href="#" id="op0">Blog</a>
+				<a href="#" id="op1">Acerca de mi</a>
+				<a href="#" id="op2">Recursos para viajar</a>
+				<a href="#" id="op3">Tienda</a>
+			</ul>
+		</section>
+	</header>
+
+	<div class="body-page">
+
+		<!-- Div para seleccionar el pais que te interese -->
+		<div class="countries">
+			<h2><a href="">Paises</a></h2>
+		</div>
+
+		<!-- Div encabezado de los blogs -->
+		<div class="page-header">
+			<h1><a href="">Andrea Katherine blog</a></h1>
+		</div>
+
+		<!-- Div el cuerpo del blog -->
+		<div class="content-container">
+			<div class="row">
+				<div class="col-md-8">
+				{% block content %}
+				{% endblock %}
+				</div>
+			</div>
+		</div>
+
+	</div>
+		
+</body>
+
+</html>
